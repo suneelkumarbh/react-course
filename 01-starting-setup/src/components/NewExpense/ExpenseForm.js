@@ -15,6 +15,10 @@ const ExpenseForm = (props) => {
     setEnteredDate(event.target.value);
   };
 
+  const cancelExpenseForm = (event) => {
+    props.onBtcClickedHandler();
+  }
+
   const submitHandler = (event) => {
     event.preventDefault();
 
@@ -65,6 +69,7 @@ const ExpenseForm = (props) => {
         </div>
       </div>
       <div className="new-expense__actions">
+        <button onClick={cancelExpenseForm}>Cancel</button>
         <button type="submit">Add Expense</button>
       </div>
     </form>
