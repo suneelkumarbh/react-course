@@ -29,6 +29,7 @@ const ExpenseForm = (props) => {
     };
 
     props.onSaveExpenseData(expeseData);
+    props.onBtcClickedHandler();
     setEnteredAmount("");
     setEnteredDate("");
     setEnteredTitle("");
