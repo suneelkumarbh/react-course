@@ -8,13 +8,15 @@ const ErrorModal = (props) => {
     <div>
       <div className={styles.backdrop} />
       <Card className={styles.modal}>
-        <div className={styles.header}>
+        <header className={styles.header}>
           <h2>{props.error.title}</h2>
+        </header>
+        <div className={styles.content}>
+          <p>{props.error.message}</p>
         </div>
-        <div className={styles.content}>{props.error.message}</div>
-        <div className={styles.actions}>
+        <footer className={styles.actions}>
           <Button clickHandler={props.onOkay}>Okay</Button>
-        </div>
+        </footer>
       </Card>
     </div>
   );
