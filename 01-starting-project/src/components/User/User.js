@@ -21,6 +21,7 @@ const User = (props) => {
       console.log('age should be greater than 0')
       return;
     }
+    props.onSubmit({id: Math.random().toString(), username: enteredUserName, age: enteredAge});
     setEnteredAge('');
     setEnteredUserName('');
   };
