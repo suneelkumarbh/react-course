@@ -9,8 +9,18 @@ const User = (props) => {
 
   const onFormSubmitHandler = (event) => {
     event.preventDefault();
-    console.log(enteredUserName);
-    console.log(enteredAge);
+    if(enteredUserName.length === 0){
+      console.log('please enter the name')
+      return;
+    }
+    else if(enteredAge.length === 0){
+      console.log('please enter the age')
+      return;
+    }
+    else if(+enteredAge <= 0){
+      console.log('age should be greater than 0')
+      return;
+    }
     setEnteredAge('');
     setEnteredUserName('');
   };
