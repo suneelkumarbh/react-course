@@ -4,8 +4,8 @@ import Card from "../UI/Card";
 import styles from "./UsersList.module.css";
 const UsersList = (props) => {
   return (
-    <Card>
-      <div className={styles.users}>
+    <Card className={styles.users}>
+      <div>
         <ul>
           {props.users.map((user) => (
             <li key={user.id}>{`Name is ${user.username} and ${user.age} years old`}</li>
