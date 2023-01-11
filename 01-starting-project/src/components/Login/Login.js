@@ -28,20 +28,6 @@ const Login = (props) => {
   // const [emailIsValid, setEmailIsValid] = useState();
   // const [enteredPassword, setEnteredPassword] = useState("");
   // const [passwordIsValid, setPasswordIsValid] = useState();
-  const [formIsValid, setFormIsValid] = useState(false);
-
-  // useEffect(() => {
-  //   const identifier = setTimeout(() => {
-  //     console.log("timeout");
-  //     setFormIsValid(
-  //       enteredEmail.includes("@") && enteredPassword.trim().length > 6
-  //     );
-  //   }, 500);
-  //   return () => {
-  //     console.log("cleaned");
-  //     clearTimeout(identifier);
-  //   };
-  // }, [enteredEmail, enteredPassword]);
   const [emailState, dispatchEmailState] = useReducer(emailReducer, {
     value: "",
     isValid: false,
@@ -52,6 +38,23 @@ const Login = (props) => {
     isValid: false,
   });
 
+  const [formIsValid, setFormIsValid] = useState(false);
+
+  const {isValid: emailIsValid} = emailState
+  const {isValid: passwordIsValid} = passwordState
+  useEffect(() => {
+    const identifier = setTimeout(() => {
+      console.log("timeout");
+      setFormIsValid(
+        emailIsValid && passwordIsValid
+      );
+    }, 500);
+    return () => {
+      console.log("cleaned");
+      clearTimeout(identifier);
+    };
+  }, [emailIsValid, passwordIsValid]);
+  
   const emailChangeHandler = (event) => {
     //setEnteredEmail(event.target.value);
     dispatchEmailState({ type: "USER_INPUT", val: event.target.value });
