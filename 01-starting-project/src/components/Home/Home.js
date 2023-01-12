@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <Card className={classes.home}>
       <h1>Welcome back!</h1>
-      <Button onCLick={ctx.onLogout}></Button>
+      <Button onCLick={ctx.onLogout}>Logout</Button>
     </Card>
   );
 };
