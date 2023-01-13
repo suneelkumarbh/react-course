@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import MenuItemForm from "./MealItemForm";
+import MealItemForm from "./MenuItemForm";
 import classes from "./MenuItem.module.css";
 const MenuItem = (props) => {
   const price = `$${props.price.toFixed(2)}`;
@@ -12,7 +12,7 @@ const MenuItem = (props) => {
       </div>
 
       <div>
-        <MenuItemForm id={props.id} />
+        <MealItemForm id={props.id} />
       </div>
     </li>
   );
