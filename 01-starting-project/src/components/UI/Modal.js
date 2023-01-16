@@ -1,10 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Cart from "../Cart/Cart";
 import classes from "./Modal.module.css";
 import Card from "./Card";
 const Backdrop = (props) => {
-  return <div className={classes.backdrop}></div>;
+  return <div className={classes.backdrop} onClick={props.onClick}></div>;
 };
 
 const ModalOverlay = (props) => {
@@ -20,7 +19,7 @@ const Modal = (props) => {
   return (
     <React.Fragment>
       {ReactDOM.createPortal(
-        <Backdrop />,
+        <Backdrop onClick={props.onClick}/>,
         document.getElementById("backdrop-root")
       )}
       {ReactDOM.createPortal(
