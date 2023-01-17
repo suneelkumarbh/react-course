@@ -9,7 +9,7 @@ function App() {
   console.log("App Running");
   const btcClickHandler = useCallback(() => {
     if (allowToggle) {
-      setShowParagraph(() => !showParagraph);
+      setShowParagraph((prev) => !prev);
     }
   }, [allowToggle]);
 
