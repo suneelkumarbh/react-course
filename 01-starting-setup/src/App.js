@@ -5,14 +5,22 @@ import DemoOutput from "./components/Demo/DemoOutput";
 
 function App() {
   const [showParagraph, setShowParagraph] = useState(false);
+  const [allowToggle, setAllowToggle] = useState(false);
   console.log("App Running");
   const btcClickHandler = useCallback(() => {
-    setShowParagraph(() => !showParagraph);
-  }, []);
+    if (allowToggle) {
+      setShowParagraph(() => !showParagraph);
+    }
+  }, [allowToggle]);
+
+  const allowToggleHandler = () => {
+    setAllowToggle(true);
+  }
   return (
     <div className="app">
       <h1>Hi there!</h1>
-      <DemoOutput show={false} />
+      <DemoOutput show={showParagraph} />
+      <Button onClick={allowToggleHandler}>Allow Toggle</Button>
       <Button onClick={btcClickHandler}>Show Paragraph!</Button>
     </div>
   );
