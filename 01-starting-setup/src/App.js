@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import Button from "./components/UI/Button/Button";
 import "./App.css";
 import DemoOutput from "./components/Demo/DemoOutput";
@@ -6,9 +6,9 @@ import DemoOutput from "./components/Demo/DemoOutput";
 function App() {
   const [showParagraph, setShowParagraph] = useState(false);
   console.log("App Running");
-  const btcClickHandler = () => {
+  const btcClickHandler = useCallback(() => {
     setShowParagraph(() => !showParagraph);
-  };
+  }, []);
   return (
     <div className="app">
       <h1>Hi there!</h1>
