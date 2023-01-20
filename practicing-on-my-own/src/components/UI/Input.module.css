@@ -1,0 +1,11 @@
+.input input{
+  height: 1.5rem;
+  width: 100%;
+  margin: 5px;
+  border-radius: 5px;
+  padding: 0.5rem;
+  display: block
+}
+.input label{
+  font-weight: bold;
+}

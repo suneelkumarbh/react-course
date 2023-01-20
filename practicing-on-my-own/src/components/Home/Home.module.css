@@ -1,0 +1,14 @@
+.input-box{
+  width: 50%
+}
+
+.input-box form{
+  width: 90%
+}
+
+.invalid{
+  border-color: red;
+}
+.issues-form{
+  width: 100%;
+}

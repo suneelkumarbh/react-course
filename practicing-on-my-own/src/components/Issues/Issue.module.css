@@ -1,0 +1,8 @@
+.issue .name{
+  color: darkblue
+}
+.issue .actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
