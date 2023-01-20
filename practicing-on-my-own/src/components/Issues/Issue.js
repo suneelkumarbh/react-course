@@ -9,6 +9,10 @@ const Issue = (props) => {
   const resolveHandler = () => {
     issuesCxt.resolveIssue(props.issue.id)
   }
+
+  const removeIssueHandler = () => {
+    issuesCxt.removeIssue(props.issue.id)
+  }
   return (
     <li className={classes.issue}>
       <div>
@@ -19,7 +23,7 @@ const Issue = (props) => {
       </div>
       <div>
         <Button onClick={resolveHandler}>Resolve</Button>
-        <Button>Remove</Button>
+        <Button onClick={removeIssueHandler}>Remove</Button>
       </div>
     </li>
   );
