@@ -22,6 +22,7 @@ const useInput = (validateInput) => {
   return {
     value: field,
     fieldIsInvalid,
+    fieldIsValid,
     fieldChangeHandler,
     fieldBlurHandler,
     resetFieldHandler

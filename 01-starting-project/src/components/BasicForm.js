@@ -5,6 +5,7 @@ const BasicForm = (props) => {
   const {
     value: firstName,
     fieldIsInvalid: firstNameIsInvalid,
+    fieldIsValid: firstNameIsValid,
     fieldChangeHandler: firstNameChangeHandler,
     fieldBlurHandler: firstNameBlurHandler,
     resetFieldHandler: resetFirstName,
@@ -13,6 +14,7 @@ const BasicForm = (props) => {
   const {
     value: lastName,
     fieldIsInvalid: lastNameIsInvalid,
+    fieldIsValid: lastNameIsValid,
     fieldChangeHandler: lastNameChangeHandler,
     fieldBlurHandler: lastNameBlurHandler,
     resetFieldHandler: resetLastName,
@@ -21,6 +23,7 @@ const BasicForm = (props) => {
   const {
     value: email,
     fieldIsInvalid: emailIsInvalid,
+    fieldIsValid: emailIsValid,
     fieldChangeHandler: emailChangeHandler,
     fieldBlurHandler: emailBlurHandler,
     resetFieldHandler: resetEmail,
@@ -36,6 +39,12 @@ const BasicForm = (props) => {
     resetLastName();
     resetEmail();
   };
+
+  let formIsValid = false;
+
+  if (firstNameIsValid && lastNameIsValid && emailIsValid) {
+    formIsValid = true;
+  }
 
   const firstNameHasError = firstNameIsInvalid
     ? "form-control invalid"
@@ -91,7 +100,7 @@ const BasicForm = (props) => {
         {emailIsInvalid && <p className="error-text">Email should be valid</p>}
       </div>
       <div className="form-actions">
-        <button>Submit</button>
+        <button disabled={!formIsValid}>Submit</button>
       </div>
     </form>
   );
