@@ -80,7 +80,6 @@ button:active {
 }
 
 button:disabled, 
-button:hover,
 button:active {
   background-color: #ccc;
   color: #292929;
