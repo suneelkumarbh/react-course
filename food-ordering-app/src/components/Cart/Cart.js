@@ -2,7 +2,7 @@ import { Fragment, useState } from "react";
 import classes from "./Cart.module.css";
 import Modal from "../UI/Modal";
 import { useContext } from "react";
-import CartContext from "../../store/cart-context";
+import CartContext from "../../store/context-api/cart-context";
 import CartItem from "./CartItem";
 import Checkout from "./Checkout";
 import useHttpRequest from "../../hooks/http-hook";
